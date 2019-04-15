@@ -1,0 +1,26 @@
+abstract interface Hello {
+	public final static int a = 10;
+	public static void print1() {
+		System.out.println("Hello from static interface");
+	}
+	public default void print2() {
+		System.out.println("Hello from default object");
+	}
+	public abstract void print3();
+}
+
+public class InterfacesExample implements Hello{
+
+	@Override
+	public void print3() {
+		System.out.println("Hello from override object");
+	}
+	
+	public static void main(String[] args) {
+		int k = Hello.a;
+		Hello.print1();
+		InterfacesExample interfacesExample = new InterfacesExample();
+		interfacesExample.print2();
+		interfacesExample.print3();
+	}
+}
